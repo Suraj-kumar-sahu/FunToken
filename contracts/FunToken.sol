@@ -30,8 +30,8 @@ contract FunToken{
         bool _tokenHolder ;
     } 
 
-    mapping(address => TokenHolderInfo) tokenHolderInfos ;
-    mapping(address => uint) balanceOf ;
+    mapping(address => TokenHolderInfo) public tokenHolderInfos ;
+    mapping(address => uint) public balanceOf ;
     mapping(address => mapping(address=>uint)) allowance ;
 
     constructor(uint _initialSupply)  {
@@ -40,7 +40,7 @@ contract FunToken{
         totalSupply = _initialSupply ;
     }
 
-    function inc() public {
+    function inc() internal {
         _userId += 1 ;
     }
 
